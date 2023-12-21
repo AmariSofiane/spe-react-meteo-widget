@@ -1,0 +1,32 @@
+.App {
+  font-family: 'Teko', sans-serif;
+    width: 70%;
+    margin: auto;
+    background-color: lightblue;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(to bottom right, #3498db, #9fccd3);
+    border-radius: 15px;
+    padding: 10px;
+  
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 60px;
+    
+  
+      .card {
+        flex-basis: calc(33.33% - 20px); 
+        margin-bottom: 20px;
+      }
+    }
+
+    h1 {
+      font-weight: bold;
+      font-size: 4rem;
+      margin: 20px;
+      text-shadow: 0 0 10px rgba(white, 0.6); 
+      text-decoration: underline dotte;
+  }
+}

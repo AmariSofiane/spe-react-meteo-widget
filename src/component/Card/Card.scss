@@ -1,27 +1,31 @@
 .card {
     position: relative;
-    background-color: #0ccd93;
-    border-radius: 8px;
+    background: radial-gradient(circle, lightgrey, #fff);
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
+    max-width: 300px;
+    max-height: 300px;
     transition: transform 0.3s ease-in-out;
     overflow: hidden;
 
     &:hover {
         transform: translateY(-5px);
+        
     }
 
     h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
+        font-size: 20px;
+        margin-bottom: 5px;
     }
 
     p {
-        font-size: 18px;
-        color: #333;
-        margin-bottom: 5px;
+        font-size: 34px; 
+        font-weight: bold;
+        color: black;
     }
+
 
     button {
         position: absolute;
@@ -40,5 +44,15 @@
             transform: scale(1.2);
             opacity: 1;
         }
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .description {
+        font-size: 15px;
+        margin-top: 1px;
     }
 }

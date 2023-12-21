@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import './App.scss'
 import Search from '../Search/Search';
 import Card from '../Card/Card';
-import './App.css'
 
 function App() {
   const [weatherDataList, setWeatherDataList] = useState([]);
@@ -17,10 +17,12 @@ function App() {
     setWeatherDataList(updatedWeatherList);
   };
 
+  const apiKey = import.meta.env.VITE_OPENWEATHER_API_URL;
+  
   const searchCity = async (cityName: string) => {
     try {
     
-      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${process.env.apiKey}`;
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}&lang=fr `;
   
       const response = await fetch(apiUrl);
       if (!response.ok) {
@@ -33,6 +35,11 @@ function App() {
         id: idCounter,
         cityName: data.name,
         temperature: data.main.temp,
+        description: data.weather[0].description,
+        icon: data.weather[0].icon
+        
+        
+
       };
   
       addWeatherCard(newWeatherData);
@@ -51,6 +58,8 @@ function App() {
             key={weatherData.id}
             cityName={weatherData.cityName}
             temperature={weatherData.temperature}
+            description={weatherData.description}
+            icon={weatherData.icon}
             onDelete={() => removeWeatherCard(weatherData.id)}
           />
         ))}
