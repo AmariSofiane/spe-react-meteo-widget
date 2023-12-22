@@ -1,6 +1,13 @@
 import './Card.scss';
 
-function Card({ cityName, temperature, onDelete, description, icon }) {
+interface CardProps {
+  cityName: string;
+  temperature: number;
+  onDelete?: () => void;
+  description: string;
+  icon: string;
+}
+function Card({ cityName, temperature, onDelete, description, icon }: CardProps) {
   return (
     <div className="card">
       <h2 className="city-small">{cityName}</h2>

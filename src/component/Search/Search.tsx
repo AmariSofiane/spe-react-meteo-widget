@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import './Search.scss'
 
-function Search({ onSearch }) {
+
+interface SearchProps {
+  onSearch: (city: string) => void;
+}
+
+function Search({ onSearch }: SearchProps) {
   const [cityName, setCityName] = useState<string>('');
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,6 +29,6 @@ function Search({ onSearch }) {
       <button onClick={handleSearch}>Rechercher</button>
     </div>
   );
-};
+}
 
 export default Search;

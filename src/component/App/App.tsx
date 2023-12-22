@@ -4,15 +4,23 @@ import Search from '../Search/Search';
 import Card from '../Card/Card';
 
 function App() {
-  const [weatherDataList, setWeatherDataList] = useState([]);
-  const [idCounter, setIdCounter] = useState(1);
+  interface IWeatherData {
+    id: number;
+    cityName: string;
+    temperature: number;
+    description: string;
+    icon: string;
+  }
 
-  const addWeatherCard = (weatherData) => {
+  const [weatherDataList, setWeatherDataList] = useState<IWeatherData[]>([]);
+  const [idCounter, setIdCounter] = useState<number>(1);
+
+  const addWeatherCard = (weatherData : IWeatherData) => {
     setWeatherDataList([...weatherDataList, { ...weatherData, id: idCounter }]);
     setIdCounter(idCounter + 1);
   };
 
-  const removeWeatherCard = (id) => {
+  const removeWeatherCard = (id:number) => {
     const updatedWeatherList = weatherDataList.filter((weather) => weather.id !== id);
     setWeatherDataList(updatedWeatherList);
   };
@@ -57,7 +65,7 @@ function App() {
           <Card
             key={weatherData.id}
             cityName={weatherData.cityName}
-            temperature={weatherData.temperature}
+            temperature={Math.round(weatherData.temperature)}
             description={weatherData.description}
             icon={weatherData.icon}
             onDelete={() => removeWeatherCard(weatherData.id)}
