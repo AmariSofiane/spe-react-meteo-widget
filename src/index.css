@@ -1,5 +1,6 @@
 @import url(https://fonts.bunny.net/css?family=teko:300,400,600);
 
-#root{
-@import url(https://fonts.bunny.net/css?family=teko:300,400,600);
+#root {
+    background: linear-gradient(to bottom right, #3498db, #9fccd3);
+    height: 100vh;
 }

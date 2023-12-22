@@ -25,7 +25,7 @@ function App() {
     setWeatherDataList(updatedWeatherList);
   };
 
-  const apiKey = import.meta.env.VITE_OPENWEATHER_API_URL;
+  const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
   
   const searchCity = async (cityName: string) => {
     try {
